@@ -6,19 +6,19 @@
   <title>Escuela de Wushu Kung Fu</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 1em;
-      position: relative;
-      overflow: hidden;
-    }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+ header {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 4em 1em 1em 1em; /* Agrega más espacio arriba */
+  position: relative;
+  overflow: hidden;
+}
     header img {
       width: 80%;
       max-width: 700px;
@@ -34,11 +34,15 @@
       50% { transform: scale(1.03); box-shadow: 0 0 35px rgba(255, 215, 0, 0.9); }
       100% { transform: scale(1); box-shadow: 0 0 25px rgba(255, 215, 0, 0.6); }
     }
-    nav {
-      background: #222;
-      padding: 1em;
-      text-align: center;
-    }
+   nav {
+  background: #222;
+  padding: 1em;
+  text-align: center;
+  position: fixed;  /* Esta línea hace que la barra se mantenga fija */
+  top: 0;            /* La posiciona arriba de todo */
+  width: 100%;
+  z-index: 1000;     /* Asegura que esté por encima del resto del contenido */
+}
     nav a {
       color: #fff;
       margin: 0 15px;
@@ -55,6 +59,7 @@
       position: fixed;
       bottom: 0;
       width: 100%;
+      height: 3%;
     }
     .grid-container {
       display: grid;
@@ -99,8 +104,50 @@
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
+  
+   #sobre {
+      background: linear-gradient(135deg, #a42a2a, #ebedee);
+    
+      background-size: cover;
+      background-blend-mode: overlay;
+    }
+    #competidores {
+      background: radial-gradient(circle, #696345be, #ffa751);
+      animation: fondoBrillante 6s infinite alternate;
+    }
+    #galeria {
+      background: radial-gradient(circle, #fdfdfebe, #6da2bc);
+      animation: fondoBrillante 6s infinite alternate;
+    }
+    #eventos {
+      background: linear-gradient(to right, #fceabb, #520d19);
+
+      background-size: cover;
+      background-blend-mode: overlay;
+    }
+    #patrocinios {
+      background: radial-gradient(circle, #696345be, #ffa751);
+      animation: fondoBrillante 6s infinite alternate;
+    }
+    #contacto {
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      background-image: url('imagenes/contacto_bg.jpg');
+      background-size: cover;
+      background-blend-mode: screen;
+    }
+    @keyframes fondoBrillante {
+      0% { filter: brightness(1); }
+      100% { filter: brightness(1.1); }
+    }
+    @keyframes moverFondo {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 0; }
+    }
+  
+  
   </style>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
 </head>
 <body>
@@ -111,6 +158,7 @@
     <img src="imagenes/LOGO ESCUELA wushu.jpg" alt="Escuela Shen Jing Hu" />
   </header>
   <nav>
+      <a href="#">Inicio</a>
     <a href="#sobre">Sobre Nosotros</a>
     <a href="#competidores">Competidores</a>
     <a href="#galeria">Galería</a>
@@ -466,14 +514,25 @@ Juntos podemos llevar a nuestros competidores más lejos, más alto, más fuerte
    
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Email: contacto@escuelawushu.com</p>
-    <p>Teléfono: (123) 456-7890</p>
+  <section id="contacto" style="padding: 10px 20px 120px 20px;">
+   <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1rem;">Contacto</h2>
+  <div style="text-align: center; font-size: 1.2rem;">
+    <p>Email: <a href="mailto:shenjinghu@gmail.com">shenjinghu@gmail.com</a></p>
+    <p>
+      <i class="fab fa-instagram" style="font-size: 1.5rem; vertical-align: middle;"></i>
+      Instagram:
+      <a href="https://www.instagram.com/wushu.shenjinghu/" target="_blank" style="color: #C13584; text-decoration: none;">
+        
+        @wushu.shenjinghu
+      </a>
+    </p>
+  </div>
+
+    
   </section>
 
   <footer>
-    <p>&copy; 2025 Escuela Shen-Jing-Hu. Todos los derechos reservados.</p>
+    <p>&copy; Asociacion Noroeste SHEN - JING -HU de Wushu Kung Fu. 2025</p>
   </footer>
 
 
