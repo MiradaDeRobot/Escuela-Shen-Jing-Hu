@@ -20,8 +20,8 @@
   overflow: hidden;
 }
     header img {
-      width: 80%;
-      max-width: 700px;
+      width: 100%;
+      max-width: 1200px;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -144,7 +144,28 @@
       100% { background-position: 100% 0; }
     }
   
-  
+   #videoIntro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#videoIntro video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
   </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -153,10 +174,15 @@
 <body>
 
   
+  
 
-  <header>
+  <header >
+    
     <img src="imagenes/LOGO ESCUELA wushu.jpg" alt="Escuela Shen Jing Hu" />
   </header>
+
+  
+
   <nav>
       <a href="#">Inicio</a>
     <a href="#sobre">Sobre Nosotros</a>
@@ -528,7 +554,19 @@ Juntos podemos llevar a nuestros competidores más lejos, más alto, más fuerte
     </p>
   </div>
 
-    
+    <!-- Intro de video -->
+<div id="videoIntro">
+  <video autoplay muted playsinline id="introVideo">
+    <source src="intro-kungfu.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+</div>
+
+<!-- Contenido principal -->
+<div id="contenidoPagina" style="display: none;">
+  <!-- Aquí va el resto de tu página -->
+</div>
+
   </section>
 
   <footer>
@@ -558,6 +596,16 @@ Juntos podemos llevar a nuestros competidores más lejos, más alto, más fuerte
     audio.play();
     logo.removeEventListener("click", reproducirAudio); // evita múltiples clics
   });
+
+
+   const introVideo = document.getElementById("introVideo");
+  const videoIntro = document.getElementById("videoIntro");
+  const contenidoPagina = document.getElementById("contenidoPagina");
+
+  introVideo.onended = function () {
+    videoIntro.style.display = "none";
+    contenidoPagina.style.display = "block";
+  };
 </script>
 
 </body>
